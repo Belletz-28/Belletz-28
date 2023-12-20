@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @Belletz-28
+- 👋 Hi, I’m @0xDev28
 - 👀 I’m interested in Python, Data Analysis and Finance.
 - 🌱 I’m currently learning Python for Finance
 - 💞️ I’m looking to collaborate on Asset Analysis
