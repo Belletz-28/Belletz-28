@@ -2,7 +2,7 @@
 - 👀 I’m interested in Python, Data Analysis and Finance.
 - 🌱 I’m currently learning Python for Finance
 - 💞️ I’m looking to collaborate on Asset Analysis
-- 📫 How to reach me matteob252@gmail.com
+- 📫 How to reach me 0XDev28@protonmail.com
 
 <!---
 Belletz-28/Belletz-28 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
