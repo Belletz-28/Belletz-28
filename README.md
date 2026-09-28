@@ -11,6 +11,20 @@
 - 🛒 **B2B & e-commerce platforms** – ordering, catalogues and operational back offices
 - 📊 **Data & finance** – data analysis and financial tooling, where my journey started with Python
 
+## Tech stack
+
+Drawn from the projects I build and ship.
+
+| Area | Technologies |
+| --- | --- |
+| Languages | Python, TypeScript, SQL |
+| AI & LLM | Anthropic Claude API, LangGraph, RAG with hybrid retrieval, retrieval evaluation (RAGAS), document parsing (Docling, MinerU), OCR (Tesseract, OpenCV) |
+| Backend | FastAPI, Flask, Pydantic, SQLAlchemy, Alembic, Node.js, Bun |
+| Frontend | Next.js, React, Tailwind CSS, Material UI, TanStack Query, Streamlit |
+| Data | PostgreSQL, pgvector, Qdrant, Supabase, DuckDB, SQLite, Drizzle ORM, pandas, Metabase |
+| Platform & DevOps | Docker, GitHub Actions, pnpm + Turborepo monorepos, uv, Renovate, Fly.io |
+| Quality | pytest, Vitest, Playwright, Ruff, Biome, ESLint, mypy, commitlint |
+
 ## How I work
 
 - Forward-deployed: I embed with the team and the problem, then ship
