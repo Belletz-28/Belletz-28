@@ -1,10 +1,23 @@
-- 👋 Hi, I’m @0xDev28
-- 👀 I’m interested in Python, Data Analysis and Finance.
-- 🌱 I’m currently learning Python for Finance
-- 💞️ I’m looking to collaborate on Asset Analysis
-- 📫 How to reach me 0XDev28@protonmail.com
+# Ciao, sono Belletz-28 👋
 
-<!---
-Belletz-28/Belletz-28 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+Sto imparando **Python per la finanza** e mi interessano l'analisi dei dati e degli asset finanziari.
+
+## Di cosa mi occupo
+
+- 🐍 Python
+- 📊 Data analysis
+- 💹 Finanza e analisi degli asset
+
+## Cosa sto facendo ora
+
+- 🌱 Sto studiando Python for Finance
+- 💞️ Cerco collaborazioni sull'Asset Analysis
+
+## Attività recente
+
+<!--RECENT_ACTIVITY:START-->
+<!--RECENT_ACTIVITY:END-->
+
+## Contatti
+
+- 📫 [0XDev28@protonmail.com](mailto:0XDev28@protonmail.com)
