@@ -17,10 +17,10 @@ Drawn from the projects I build and ship.
 
 | Area | Technologies |
 | --- | --- |
-| Languages | Python, TypeScript, SQL |
+| Languages | Python, TypeScript, Go, Rust, SQL |
 | AI & LLM | Anthropic Claude API, LangGraph, RAG with hybrid retrieval, retrieval evaluation (RAGAS), document parsing (Docling, MinerU), OCR (Tesseract, OpenCV) |
-| Backend | FastAPI, Flask, Pydantic, SQLAlchemy, Alembic, Node.js, Bun |
-| Frontend | Next.js, React, Tailwind CSS, Material UI, TanStack Query, Streamlit |
+| Backend | FastAPI, Flask, Go services, Rust, Pydantic, SQLAlchemy, Alembic, Node.js, Bun |
+| Frontend | Next.js, React, Tailwind CSS, Material UI, TanStack Query, Sanity headless CMS, Chrome extensions, Streamlit |
 | Data | PostgreSQL, pgvector, Qdrant, Supabase, DuckDB, SQLite, Drizzle ORM, pandas, Metabase |
 | Platform & DevOps | Docker, GitHub Actions, pnpm + Turborepo monorepos, uv, Renovate, Fly.io |
 | Quality | pytest, Vitest, Playwright, Ruff, Biome, ESLint, mypy, commitlint |
