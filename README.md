@@ -38,7 +38,6 @@ Drawn from the projects I build and ship.
 - 🔀 PR merged in [Belletz-28/Belletz-28](https://github.com/Belletz-28/Belletz-28)
 - 🔀 PR assigned in [Belletz-28/Belletz-28](https://github.com/Belletz-28/Belletz-28)
 - 🔀 PR opened in [Belletz-28/Belletz-28](https://github.com/Belletz-28/Belletz-28)
-- 🆕 Creato branch in [Belletz-28/Belletz-28](https://github.com/Belletz-28/Belletz-28)
 <!--RECENT_ACTIVITY:END-->
 
 ## Get in touch
