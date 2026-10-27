@@ -13,7 +13,7 @@
 <code>[ABOUT]</code> &nbsp;<sub>🟢 AVAILABLE FOR PROJECTS</sub>
 <h3>Full Stack &amp; Forward Deployed AI Engineer</h3>
 Founder of <a href="https://github.com/CBM-Solutions">CBM-Solutions</a>. 6+ years building software end to end: from data and backend to production web applications and AI-powered systems. I work close to the customer's problem and take solutions from idea to production.<br/><br/>
-<code>FULL STACK</code> <code>FORWARD DEPLOYED AI</code> <code>FOUNDER</code>
+<code>FULL&nbsp;STACK</code> <code>FORWARD&nbsp;DEPLOYED&nbsp;AI</code> <code>FOUNDER</code>
 </td></tr></table>
 
 ## `// 02` Now building
@@ -24,14 +24,14 @@ Founder of <a href="https://github.com/CBM-Solutions">CBM-Solutions</a>. 6+ year
 <code>[DEV TOOLING]</code> &nbsp;<sub>🟢 PRIVATE · IN PROGRESS</sub>
 <h3>belletz-skills</h3>
 Claude Code plugin marketplace for engineering-grade delivery: risk-scaled SDLC protocol, independent review, CI-parity gates, context and cost guards, benchmarks on frozen real tasks.<br/><br/>
-<code>Python</code> <code>Claude Code</code> <code>Hooks</code> <code>SQLite</code>
+<code>Python</code> <code>Claude&nbsp;Code</code> <code>Hooks</code> <code>SQLite</code>
 </td></tr></table>
 
 <table><tr><td>
 <code>[MARKET INTELLIGENCE]</code> &nbsp;<sub>🟢 PRIVATE · IN PROGRESS</sub>
 <h3>Semiconductor Intelligence</h3>
 Upstream supply-chain signals (FRED, SEC EDGAR, equities, tech news) turned into a 0–100 scarcity index and a TCO engine that forecast compute availability and pricing.<br/><br/>
-<code>Python 3.14</code> <code>PostgreSQL 18</code> <code>FastAPI</code> <code>uv</code>
+<code>Python&nbsp;3.14</code> <code>PostgreSQL&nbsp;18</code> <code>FastAPI</code> <code>uv</code>
 </td></tr></table>
 
 <table><tr><td>
@@ -45,7 +45,7 @@ Multi-agent RAG assistant over WhatsApp, email and documents for the fashion-acc
 <code>[TRADING LAB]</code> &nbsp;<sub>🟢 PRIVATE · IN PROGRESS</sub>
 <h3>Quantum</h3>
 Automated trading lab: market replay, risk controls and demo execution, with append-only run authority and every claim backed by test evidence.<br/><br/>
-<code>Python 3.14</code> <code>NautilusTrader</code> <code>Postgres</code> <code>Docker</code>
+<code>Python&nbsp;3.14</code> <code>NautilusTrader</code> <code>Postgres</code> <code>Docker</code>
 </td></tr></table>
 
 <table><tr><td>
@@ -94,13 +94,13 @@ Data analysis and financial tooling, where my journey started with Python.
 ## `// 04` Stack
 
 <table>
-<tr><td><sub><b>LANGUAGES</b></sub></td><td><code>Python</code> <code>TypeScript</code> <code>Go</code> <code>Rust</code> <code>SQL</code></td></tr>
-<tr><td><sub><b>AI &AMP; LLM</b></sub></td><td><code>Claude API</code> <code>LangGraph</code> <code>RAG</code> <code>RAGAS</code> <code>Docling</code> <code>MinerU</code> <code>OpenCV</code></td></tr>
-<tr><td><sub><b>BACKEND</b></sub></td><td><code>FastAPI</code> <code>Flask</code> <code>Pydantic</code> <code>SQLAlchemy</code> <code>Node.js</code> <code>Bun</code></td></tr>
-<tr><td><sub><b>FRONTEND</b></sub></td><td><code>Next.js</code> <code>React</code> <code>Astro</code> <code>Tailwind</code> <code>TanStack Query</code> <code>Sanity</code></td></tr>
-<tr><td><sub><b>DATA</b></sub></td><td><code>PostgreSQL</code> <code>pgvector</code> <code>Qdrant</code> <code>Supabase</code> <code>DuckDB</code> <code>pandas</code></td></tr>
-<tr><td><sub><b>PLATFORM</b></sub></td><td><code>Docker</code> <code>GitHub Actions</code> <code>Turborepo</code> <code>pnpm</code> <code>uv</code> <code>Fly.io</code></td></tr>
-<tr><td><sub><b>QUALITY</b></sub></td><td><code>pytest</code> <code>Vitest</code> <code>Playwright</code> <code>Ruff</code> <code>Biome</code> <code>mypy</code></td></tr>
+<tr><td><b>LANGUAGES</b></td><td><code>Python</code> <code>TypeScript</code> <code>Go</code> <code>Rust</code> <code>SQL</code></td></tr>
+<tr><td><b>AI &AMP; LLM</b></td><td><code>Claude&nbsp;API</code> <code>LangGraph</code> <code>RAG</code> <code>RAGAS</code> <code>Docling</code> <code>MinerU</code> <code>OpenCV</code></td></tr>
+<tr><td><b>BACKEND</b></td><td><code>FastAPI</code> <code>Flask</code> <code>Pydantic</code> <code>SQLAlchemy</code> <code>Node.js</code> <code>Bun</code></td></tr>
+<tr><td><b>FRONTEND</b></td><td><code>Next.js</code> <code>React</code> <code>Astro</code> <code>Tailwind</code> <code>TanStack&nbsp;Query</code> <code>Sanity</code></td></tr>
+<tr><td><b>DATA</b></td><td><code>PostgreSQL</code> <code>pgvector</code> <code>Qdrant</code> <code>Supabase</code> <code>DuckDB</code> <code>pandas</code></td></tr>
+<tr><td><b>PLATFORM</b></td><td><code>Docker</code> <code>GitHub&nbsp;Actions</code> <code>Turborepo</code> <code>pnpm</code> <code>uv</code> <code>Fly.io</code></td></tr>
+<tr><td><b>QUALITY</b></td><td><code>pytest</code> <code>Vitest</code> <code>Playwright</code> <code>Ruff</code> <code>Biome</code> <code>mypy</code></td></tr>
 </table>
 
 ## `// 05` How I work
