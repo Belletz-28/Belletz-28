@@ -1,46 +1,55 @@
-# Belletz-28
+<p align="center">
+  <img src="assets/banner.svg" alt="Build with Belletz. Full Stack &amp; Forward Deployed AI Engineer, founder of CBM-Solutions." width="100%"/>
+</p>
 
-**Full Stack & Forward Deployed AI Engineer · Founder, [CBM-Solutions](https://github.com/CBM-Solutions)**
+<p align="center">
+  <a href="https://github.com/CBM-Solutions"><img src="https://img.shields.io/badge/FOUNDER-CBM--SOLUTIONS-2bff9b?style=for-the-badge&labelColor=080808&logo=github&logoColor=2bff9b" alt="Founder at CBM-Solutions"/></a>
+  <a href="mailto:0XDev28@protonmail.com"><img src="https://img.shields.io/badge/MAIL-0XDEV28-111111?style=for-the-badge&labelColor=080808&logo=protonmail&logoColor=2bff9b" alt="Email 0XDev28@protonmail.com"/></a>
+  <img src="https://img.shields.io/badge/EXPERIENCE-6%2B%20YEARS-111111?style=for-the-badge&labelColor=080808" alt="6+ years of experience"/>
+</p>
 
+<br/>
+
+<img src="assets/section-about.svg" alt="About" width="100%"/>
+
+**Full Stack & Forward Deployed AI Engineer · Founder of [CBM-Solutions](https://github.com/CBM-Solutions).**
 6+ years building software end to end: from data and backend to production web applications and AI-powered systems. I work close to the customer's problem and take solutions from idea to production.
 
-## What I do
+<br/>
 
-- 🤖 **AI engineering** – LLM-based agents, automation and document intelligence applied to real business workflows
-- 🧩 **Full stack development** – web platforms, internal tools and APIs, from architecture to deployment
-- 🛒 **B2B & e-commerce platforms** – ordering, catalogues and operational back offices
-- 📊 **Data & finance** – data analysis and financial tooling, where my journey started with Python
+<img src="assets/section-projects.svg" alt="Now building" width="100%"/>
 
-## Tech stack
+<img src="assets/projects.svg" alt="Now building (private, in progress). belletz-skills: Claude Code plugin marketplace with a risk-scaled SDLC protocol, review and CI-parity gates. Semiconductor Intelligence: upstream supply-chain signals turned into a scarcity index and TCO engine for compute procurement. Konny: multi-agent RAG assistant over WhatsApp, email and documents for the fashion-accessories supply chain. Quantum: automated trading lab with market replay, risk controls and demo execution. B2Search: lead generation and technical audit engine with approval-gated outreach. UniPost: study-sharing platform for Italian university students." width="100%"/>
 
-Drawn from the projects I build and ship.
+<sub>Most of my work lives in private repositories: happy to walk through any of these on a call.</sub>
 
-| Area | Technologies |
-| --- | --- |
-| Languages | Python, TypeScript, Go, Rust, SQL |
-| AI & LLM | Anthropic Claude API, LangGraph, RAG with hybrid retrieval, retrieval evaluation (RAGAS), document parsing (Docling, MinerU), OCR (Tesseract, OpenCV) |
-| Backend | FastAPI, Flask, Go services, Rust, Pydantic, SQLAlchemy, Alembic, Node.js, Bun |
-| Frontend | Next.js, React, Tailwind CSS, Material UI, TanStack Query, Sanity headless CMS, Chrome extensions, Streamlit |
-| Data | PostgreSQL, pgvector, Qdrant, Supabase, DuckDB, SQLite, Drizzle ORM, pandas, Metabase |
-| Platform & DevOps | Docker, GitHub Actions, pnpm + Turborepo monorepos, uv, Renovate, Fly.io |
-| Quality | pytest, Vitest, Playwright, Ruff, Biome, ESLint, mypy, commitlint |
+<br/>
 
-## How I work
+<img src="assets/section-services.svg" alt="What I do" width="100%"/>
 
-- Forward-deployed: I embed with the team and the problem, then ship
-- Pragmatic engineering: small iterations, working software, measurable outcomes
-- Founder mindset: product, delivery and maintainability, not just code
+<img src="assets/services.svg" alt="AI engineering: LLM-based agents, automation and document intelligence. Full stack development: web platforms, internal tools and APIs. B2B &amp; e-commerce: ordering, catalogues and back offices. Data &amp; finance: data analysis and financial tooling." width="100%"/>
 
-## Recent activity
+<br/>
 
-<!--RECENT_ACTIVITY:START-->
-- 🔀 PR merged in [Belletz-28/Belletz-28](https://github.com/Belletz-28/Belletz-28)
-- 🔀 PR assigned in [Belletz-28/Belletz-28](https://github.com/Belletz-28/Belletz-28)
-- 🔀 PR opened in [Belletz-28/Belletz-28](https://github.com/Belletz-28/Belletz-28)
-<!--RECENT_ACTIVITY:END-->
+<img src="assets/section-stack.svg" alt="Stack" width="100%"/>
 
-## Get in touch
+<img src="assets/stack.svg" alt="Languages: Python, TypeScript, Go, Rust, SQL. AI &amp; LLM: Claude API, LangGraph, RAG, RAGAS, Docling, MinerU, OpenCV. Backend: FastAPI, Flask, Pydantic, SQLAlchemy, Node.js, Bun. Frontend: Next.js, React, Astro, Tailwind, TanStack Query, Sanity. Data: PostgreSQL, pgvector, Qdrant, Supabase, DuckDB, pandas. Platform: Docker, GitHub Actions, Turborepo, pnpm, uv, Fly.io. Quality: pytest, Vitest, Playwright, Ruff, Biome, mypy." width="100%"/>
 
-- 🏢 [CBM-Solutions](https://github.com/CBM-Solutions)
-- 📫 [0XDev28@protonmail.com](mailto:0XDev28@protonmail.com)
-- 🌐 Website: coming soon
+<br/>
+
+<img src="assets/section-principles.svg" alt="How I work" width="100%"/>
+
+<img src="assets/principles.svg" alt="01 Forward-deployed: I embed with the team and the problem, then ship. 02 Pragmatic engineering: small iterations, working software, measurable outcomes. 03 Founder mindset: product, delivery and maintainability, not just code." width="100%"/>
+
+<br/>
+
+<img src="assets/section-contact.svg" alt="Contact" width="100%"/>
+
+```console
+~/belletz $ ./contact --list
+  company   →  github.com/CBM-Solutions
+  mail      →  0XDev28@protonmail.com
+  web       →  buildwithbelletz (coming soon)
+```
+
+<img src="assets/footer.svg" alt="Build with Belletz." width="100%"/>

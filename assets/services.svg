@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="468" viewBox="0 0 1200 468" role="img" aria-label="What I do: AI engineering, full stack development, B2B &amp; e-commerce, data &amp; finance.">
+<title>What I do: AI engineering, full stack development, B2B &amp; e-commerce, data &amp; finance.</title>
+<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+  <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
+</pattern></defs>
+<rect width="1200" height="468" fill="#080808"/>
+<rect width="1200" height="468" fill="url(#grid)"/>
+<rect x="0.5" y="0.5" width="1199" height="467" fill="none" stroke="#1f1f1f"/>
+<style>@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}} .pulse{animation:pulse 2.4s ease-in-out infinite}</style><rect x="32.5" y="32.5" width="555.0" height="189" fill="#111111" stroke="#2a2a2a"/>
+<rect x="32.0" y="32" width="3" height="190" fill="#2bff9b"/>
+<text x="60.0" y="72" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="500" fill="#2bff9b" text-anchor="start" textLength="36.0" lengthAdjust="spacingAndGlyphs">[AI]</text>
+<text x="60.0" y="106" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="700" fill="#ededed" text-anchor="start" textLength="184.8" lengthAdjust="spacingAndGlyphs">AI engineering</text>
+<text x="60.0" y="140" font-family="Inter,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" fill="#a3a3a3">LLM-based agents, automation and document intelligence</text>
+<text x="60.0" y="164" font-family="Inter,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" fill="#a3a3a3">applied to real business workflows.</text>
+<text x="60.0" y="198" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#777777" text-anchor="start" textLength="312.0" lengthAdjust="spacingAndGlyphs">Claude API  ·  LangGraph  ·  RAG  ·  OCR</text>
+<rect x="612.5" y="32.5" width="555.0" height="189" fill="#111111" stroke="#2a2a2a"/>
+<rect x="612.0" y="32" width="3" height="190" fill="#2bff9b"/>
+<text x="640.0" y="72" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="500" fill="#2bff9b" text-anchor="start" textLength="108.0" lengthAdjust="spacingAndGlyphs">[FULL STACK]</text>
+<text x="640.0" y="106" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="700" fill="#ededed" text-anchor="start" textLength="290.4" lengthAdjust="spacingAndGlyphs">Full stack development</text>
+<text x="640.0" y="140" font-family="Inter,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" fill="#a3a3a3">Web platforms, internal tools and APIs, from architecture</text>
+<text x="640.0" y="164" font-family="Inter,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" fill="#a3a3a3">to deployment.</text>
+<text x="640.0" y="198" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#777777" text-anchor="start" textLength="304.2" lengthAdjust="spacingAndGlyphs">Next.js  ·  FastAPI  ·  Go  ·  Postgres</text>
+<rect x="32.5" y="246.5" width="555.0" height="189" fill="#111111" stroke="#2a2a2a"/>
+<rect x="32.0" y="246" width="3" height="190" fill="#2bff9b"/>
+<text x="60.0" y="286" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="500" fill="#2bff9b" text-anchor="start" textLength="45.0" lengthAdjust="spacingAndGlyphs">[B2B]</text>
+<text x="60.0" y="320" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="700" fill="#ededed" text-anchor="start" textLength="211.2" lengthAdjust="spacingAndGlyphs">B2B &amp; e-commerce</text>
+<text x="60.0" y="354" font-family="Inter,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" fill="#a3a3a3">Ordering, catalogues and operational back offices for</text>
+<text x="60.0" y="378" font-family="Inter,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" fill="#a3a3a3">companies that sell at scale.</text>
+<text x="60.0" y="412" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#777777" text-anchor="start" textLength="288.6" lengthAdjust="spacingAndGlyphs">Catalogues  ·  Orders  ·  Back office</text>
+<rect x="612.5" y="246.5" width="555.0" height="189" fill="#111111" stroke="#2a2a2a"/>
+<rect x="612.0" y="246" width="3" height="190" fill="#2bff9b"/>
+<text x="640.0" y="286" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="500" fill="#2bff9b" text-anchor="start" textLength="54.0" lengthAdjust="spacingAndGlyphs">[DATA]</text>
+<text x="640.0" y="320" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="700" fill="#ededed" text-anchor="start" textLength="184.8" lengthAdjust="spacingAndGlyphs">Data &amp; finance</text>
+<text x="640.0" y="354" font-family="Inter,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" fill="#a3a3a3">Data analysis and financial tooling, where my journey</text>
+<text x="640.0" y="378" font-family="Inter,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" fill="#a3a3a3">started with Python.</text>
+<text x="640.0" y="412" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#777777" text-anchor="start" textLength="319.8" lengthAdjust="spacingAndGlyphs">Python  ·  pandas  ·  DuckDB  ·  Metabase</text>
+</svg>
