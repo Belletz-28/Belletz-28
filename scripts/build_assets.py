@@ -125,10 +125,9 @@ def wrap(text, chars):
     return lines + [cur]
 
 
-def cards(items, label):
+def cards(items, label, ch=190, status=None):
     cols, gap, pad = 2, 24, 32
     cw = (W - 2 * pad - gap) / cols
-    ch = 190
     rows = (len(items) + cols - 1) // cols
     out = []
     for i, (tag, title, desc, techs) in enumerate(items):
@@ -137,11 +136,15 @@ def cards(items, label):
         out.append(f'<rect x="{x + .5:.1f}" y="{y + .5}" width="{cw - 1:.1f}" height="{ch - 1}" fill="{SURFACE}" stroke="{BORDER_MID}"/>')
         out.append(f'<rect x="{x:.1f}" y="{y}" width="3" height="{ch}" fill="{ACCENT}"/>')
         out.append(mono(x + 28, y + 40, f"[{tag}]", 12, ACCENT, 500, 0.15))
+        if status:
+            out.append(f'<circle class="pulse" cx="{x + cw - 28 - len(status) * 11 * (CW + 0.12) - 14:.1f}" cy="{y + 36}" r="3.5" fill="{ACCENT}"/>')
+            out.append(mono(x + cw - 28, y + 40, status, 11, SUBTLE, 500, 0.12, "end"))
         out.append(mono(x + 28, y + 74, title, 22, TEXT, 700))
         for j, line in enumerate(wrap(desc, 58)):
             out.append(f'<text x="{x + 28:.1f}" y="{y + 108 + j * 24}" font-family="{SANS}" font-size="16" fill="{MUTED}">{escape(line)}</text>')
         out.append(mono(x + 28, y + ch - 24, "  ·  ".join(techs), 12, SUBTLE, 400, 0.05))
-    return svg(2 * pad + rows * ch + (rows - 1) * gap, "\n".join(out), label)
+    style = "<style>@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}} .pulse{animation:pulse 2.4s ease-in-out infinite}</style>"
+    return svg(2 * pad + rows * ch + (rows - 1) * gap, style + "\n".join(out), label)
 
 
 def stack(groups, label):
@@ -194,6 +197,22 @@ SERVICES = [
      ["Python", "pandas", "DuckDB", "Metabase"]),
 ]
 
+# Repository privati: solo nome e riassunto, nessun link (porterebbe a un 404).
+PROJECTS = [
+    ("DEV TOOLING", "belletz-skills", "Claude Code plugin marketplace for engineering-grade delivery: risk-scaled SDLC protocol, independent review, CI-parity gates, context and cost guards, benchmarks on frozen real tasks.",
+     ["Python", "Claude Code", "Hooks", "SQLite"]),
+    ("MARKET INTELLIGENCE", "Semiconductor Intelligence", "Upstream supply-chain signals (FRED, SEC EDGAR, equities, tech news) turned into a 0-100 scarcity index and TCO engine to forecast compute availability and pricing.",
+     ["Python 3.14", "PostgreSQL 18", "FastAPI", "uv"]),
+    ("AI · RAG", "Konny", "Multi-agent RAG assistant over WhatsApp, email and documents for the fashion-accessories supply chain: 9-stage hybrid retrieval, rerank, corrective grading.",
+     ["Claude", "Qdrant", "FastAPI", "SvelteKit"]),
+    ("TRADING LAB", "Quantum", "Automated trading lab: market replay, risk controls and demo execution, with append-only run authority and every claim backed by test evidence.",
+     ["Python 3.14", "NautilusTrader", "Postgres", "Docker"]),
+    ("GROWTH", "B2Search", "Lead generation and technical audit engine: DNS, security, SEO and AI-readiness checks turned into scored opportunities and personalised, approval-gated outreach.",
+     ["Python", "asyncio", "Claude", "Streamlit"]),
+    ("PLATFORM", "UniPost", "Open platform where Italian university students share questions, answers and original study material, with reputation levels and multi-stage moderation.",
+     ["Next.js", "Supabase", "pgvector", "Playwright"]),
+]
+
 STACK = [
     ("Languages", ["Python", "TypeScript", "Go", "Rust", "SQL"]),
     ("AI & LLM", ["Claude API", "LangGraph", "RAG", "RAGAS", "Docling", "MinerU", "OpenCV"]),
@@ -216,10 +235,12 @@ def main():
     files = {
         "banner.svg": banner(),
         "section-about.svg": section(1, "About"),
-        "section-services.svg": section(2, "What I do"),
-        "section-stack.svg": section(3, "Stack"),
-        "section-principles.svg": section(4, "How I work"),
-        "section-contact.svg": section(5, "Contact"),
+        "section-projects.svg": section(2, "Now building"),
+        "section-services.svg": section(3, "What I do"),
+        "section-stack.svg": section(4, "Stack"),
+        "section-principles.svg": section(5, "How I work"),
+        "section-contact.svg": section(6, "Contact"),
+        "projects.svg": cards(PROJECTS, "Now building: " + " ".join(f"{t} — {d}" for _, t, d, _ in PROJECTS), ch=236, status="PRIVATE · IN PROGRESS"),
         "services.svg": cards(SERVICES, "What I do: AI engineering, full stack development, B2B & e-commerce, data & finance."),
         "stack.svg": stack(STACK, "Tech stack: " + "; ".join(f"{a}: {', '.join(t)}" for a, t in STACK)),
         "principles.svg": principles(PRINCIPLES, "How I work: " + " ".join(f"{t} — {d}" for t, d in PRINCIPLES)),

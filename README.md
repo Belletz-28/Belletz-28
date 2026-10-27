@@ -17,6 +17,14 @@
 
 <br/>
 
+<img src="assets/section-projects.svg" alt="Now building" width="100%"/>
+
+<img src="assets/projects.svg" alt="Now building (private, in progress). belletz-skills: Claude Code plugin marketplace with a risk-scaled SDLC protocol, review and CI-parity gates. Semiconductor Intelligence: upstream supply-chain signals turned into a scarcity index and TCO engine for compute procurement. Konny: multi-agent RAG assistant over WhatsApp, email and documents for the fashion-accessories supply chain. Quantum: automated trading lab with market replay, risk controls and demo execution. B2Search: lead generation and technical audit engine with approval-gated outreach. UniPost: study-sharing platform for Italian university students." width="100%"/>
+
+<sub>Most of my work lives in private repositories: happy to walk through any of these on a call.</sub>
+
+<br/>
+
 <img src="assets/section-services.svg" alt="What I do" width="100%"/>
 
 <img src="assets/services.svg" alt="AI engineering: LLM-based agents, automation and document intelligence. Full stack development: web platforms, internal tools and APIs. B2B &amp; e-commerce: ordering, catalogues and back offices. Data &amp; finance: data analysis and financial tooling." width="100%"/>
