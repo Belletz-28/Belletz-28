@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="456" viewBox="0 0 1200 456" role="img" aria-label="Tech stack: Languages: Python, TypeScript, Go, Rust, SQL; AI &amp; LLM: Claude API, LangGraph, RAG, RAGAS, Docling, MinerU, OpenCV; Backend: FastAPI, Flask, Pydantic, SQLAlchemy, Node.js, Bun; Frontend: Next.js, React, Astro, Tailwind, TanStack Query, Sanity; Data: PostgreSQL, pgvector, Qdrant, Supabase, DuckDB, pandas; Platform: Docker, GitHub Actions, Turborepo, pnpm, uv, Fly.io; Quality: pytest, Vitest, Playwright, Ruff, Biome, mypy">
+<title>Tech stack: Languages: Python, TypeScript, Go, Rust, SQL; AI &amp; LLM: Claude API, LangGraph, RAG, RAGAS, Docling, MinerU, OpenCV; Backend: FastAPI, Flask, Pydantic, SQLAlchemy, Node.js, Bun; Frontend: Next.js, React, Astro, Tailwind, TanStack Query, Sanity; Data: PostgreSQL, pgvector, Qdrant, Supabase, DuckDB, pandas; Platform: Docker, GitHub Actions, Turborepo, pnpm, uv, Fly.io; Quality: pytest, Vitest, Playwright, Ruff, Biome, mypy</title>
+<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+  <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
+</pattern></defs>
+<rect width="1200" height="456" fill="#080808"/>
+<rect width="1200" height="456" fill="url(#grid)"/>
+<rect x="0.5" y="0.5" width="1199" height="455" fill="none" stroke="#1f1f1f"/>
+<text x="32" y="58" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="500" fill="#777777" text-anchor="start" textLength="81.0" lengthAdjust="spacingAndGlyphs">LANGUAGES</text>
+<rect x="232.5" y="36.5" width="78.4" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="246" y="57" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="50.4" lengthAdjust="spacingAndGlyphs">Python</text>
+<rect x="320.9" y="36.5" width="112.0" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="334.4" y="57" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="84.0" lengthAdjust="spacingAndGlyphs">TypeScript</text>
+<rect x="442.9" y="36.5" width="44.8" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="456.4" y="57" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="16.8" lengthAdjust="spacingAndGlyphs">Go</text>
+<rect x="497.7" y="36.5" width="61.6" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="511.2" y="57" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="33.6" lengthAdjust="spacingAndGlyphs">Rust</text>
+<rect x="569.3" y="36.5" width="53.2" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="582.8" y="57" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="25.2" lengthAdjust="spacingAndGlyphs">SQL</text>
+<line x1="32" y1="83" x2="1168" y2="83" stroke="#1f1f1f" stroke-dasharray="2 6"/>
+<text x="32" y="116" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="500" fill="#777777" text-anchor="start" textLength="72.0" lengthAdjust="spacingAndGlyphs">AI &amp; LLM</text>
+<rect x="232.5" y="94.5" width="112.0" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="246" y="115" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="84.0" lengthAdjust="spacingAndGlyphs">Claude API</text>
+<rect x="354.5" y="94.5" width="103.6" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="368.0" y="115" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="75.6" lengthAdjust="spacingAndGlyphs">LangGraph</text>
+<rect x="468.1" y="94.5" width="53.2" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="481.6" y="115" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="25.2" lengthAdjust="spacingAndGlyphs">RAG</text>
+<rect x="531.3" y="94.5" width="70.0" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="544.8000000000001" y="115" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="42.0" lengthAdjust="spacingAndGlyphs">RAGAS</text>
+<rect x="611.3" y="94.5" width="86.8" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="624.8000000000001" y="115" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="58.8" lengthAdjust="spacingAndGlyphs">Docling</text>
+<rect x="708.1" y="94.5" width="78.4" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="721.6" y="115" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="50.4" lengthAdjust="spacingAndGlyphs">MinerU</text>
+<rect x="796.5" y="94.5" width="78.4" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="810.0" y="115" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="50.4" lengthAdjust="spacingAndGlyphs">OpenCV</text>
+<line x1="32" y1="141" x2="1168" y2="141" stroke="#1f1f1f" stroke-dasharray="2 6"/>
+<text x="32" y="174" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="500" fill="#777777" text-anchor="start" textLength="63.0" lengthAdjust="spacingAndGlyphs">BACKEND</text>
+<rect x="232.5" y="152.5" width="86.8" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="246" y="173" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="58.8" lengthAdjust="spacingAndGlyphs">FastAPI</text>
+<rect x="329.3" y="152.5" width="70.0" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="342.8" y="173" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="42.0" lengthAdjust="spacingAndGlyphs">Flask</text>
+<rect x="409.3" y="152.5" width="95.2" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="422.8" y="173" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="67.2" lengthAdjust="spacingAndGlyphs">Pydantic</text>
+<rect x="514.5" y="152.5" width="112.0" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="528.0" y="173" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="84.0" lengthAdjust="spacingAndGlyphs">SQLAlchemy</text>
+<rect x="636.5" y="152.5" width="86.8" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="650.0" y="173" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="58.8" lengthAdjust="spacingAndGlyphs">Node.js</text>
+<rect x="733.3" y="152.5" width="53.2" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="746.8" y="173" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="25.2" lengthAdjust="spacingAndGlyphs">Bun</text>
+<line x1="32" y1="199" x2="1168" y2="199" stroke="#1f1f1f" stroke-dasharray="2 6"/>
+<text x="32" y="232" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="500" fill="#777777" text-anchor="start" textLength="72.0" lengthAdjust="spacingAndGlyphs">FRONTEND</text>
+<rect x="232.5" y="210.5" width="86.8" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="246" y="231" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="58.8" lengthAdjust="spacingAndGlyphs">Next.js</text>
+<rect x="329.3" y="210.5" width="70.0" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="342.8" y="231" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="42.0" lengthAdjust="spacingAndGlyphs">React</text>
+<rect x="409.3" y="210.5" width="70.0" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="422.8" y="231" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="42.0" lengthAdjust="spacingAndGlyphs">Astro</text>
+<rect x="489.3" y="210.5" width="95.2" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="502.8" y="231" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="67.2" lengthAdjust="spacingAndGlyphs">Tailwind</text>
+<rect x="594.5" y="210.5" width="145.6" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="608.0" y="231" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="117.6" lengthAdjust="spacingAndGlyphs">TanStack Query</text>
+<rect x="750.1" y="210.5" width="78.4" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="763.6" y="231" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="50.4" lengthAdjust="spacingAndGlyphs">Sanity</text>
+<line x1="32" y1="257" x2="1168" y2="257" stroke="#1f1f1f" stroke-dasharray="2 6"/>
+<text x="32" y="290" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="500" fill="#777777" text-anchor="start" textLength="36.0" lengthAdjust="spacingAndGlyphs">DATA</text>
+<rect x="232.5" y="268.5" width="112.0" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="246" y="289" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="84.0" lengthAdjust="spacingAndGlyphs">PostgreSQL</text>
+<rect x="354.5" y="268.5" width="95.2" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="368.0" y="289" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="67.2" lengthAdjust="spacingAndGlyphs">pgvector</text>
+<rect x="459.7" y="268.5" width="78.4" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="473.2" y="289" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="50.4" lengthAdjust="spacingAndGlyphs">Qdrant</text>
+<rect x="548.1" y="268.5" width="95.2" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="561.6" y="289" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="67.2" lengthAdjust="spacingAndGlyphs">Supabase</text>
+<rect x="653.3" y="268.5" width="78.4" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="666.8000000000001" y="289" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="50.4" lengthAdjust="spacingAndGlyphs">DuckDB</text>
+<rect x="741.7" y="268.5" width="78.4" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="755.2" y="289" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="50.4" lengthAdjust="spacingAndGlyphs">pandas</text>
+<line x1="32" y1="315" x2="1168" y2="315" stroke="#1f1f1f" stroke-dasharray="2 6"/>
+<text x="32" y="348" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="500" fill="#777777" text-anchor="start" textLength="72.0" lengthAdjust="spacingAndGlyphs">PLATFORM</text>
+<rect x="232.5" y="326.5" width="78.4" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="246" y="347" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="50.4" lengthAdjust="spacingAndGlyphs">Docker</text>
+<rect x="320.9" y="326.5" width="145.6" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="334.4" y="347" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="117.6" lengthAdjust="spacingAndGlyphs">GitHub Actions</text>
+<rect x="476.5" y="326.5" width="103.6" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="490.0" y="347" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="75.6" lengthAdjust="spacingAndGlyphs">Turborepo</text>
+<rect x="590.1" y="326.5" width="61.6" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="603.6" y="347" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="33.6" lengthAdjust="spacingAndGlyphs">pnpm</text>
+<rect x="661.7" y="326.5" width="44.8" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="675.2" y="347" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="16.8" lengthAdjust="spacingAndGlyphs">uv</text>
+<rect x="716.5" y="326.5" width="78.4" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="730.0" y="347" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="50.4" lengthAdjust="spacingAndGlyphs">Fly.io</text>
+<line x1="32" y1="373" x2="1168" y2="373" stroke="#1f1f1f" stroke-dasharray="2 6"/>
+<text x="32" y="406" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="500" fill="#777777" text-anchor="start" textLength="63.0" lengthAdjust="spacingAndGlyphs">QUALITY</text>
+<rect x="232.5" y="384.5" width="78.4" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="246" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="50.4" lengthAdjust="spacingAndGlyphs">pytest</text>
+<rect x="320.9" y="384.5" width="78.4" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="334.4" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="50.4" lengthAdjust="spacingAndGlyphs">Vitest</text>
+<rect x="409.3" y="384.5" width="112.0" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="422.79999999999995" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="84.0" lengthAdjust="spacingAndGlyphs">Playwright</text>
+<rect x="531.3" y="384.5" width="61.6" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="544.8" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="33.6" lengthAdjust="spacingAndGlyphs">Ruff</text>
+<rect x="602.9" y="384.5" width="70.0" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="616.4" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="42.0" lengthAdjust="spacingAndGlyphs">Biome</text>
+<rect x="682.9" y="384.5" width="61.6" height="32" fill="#111111" stroke="#2a2a2a"/>
+<text x="696.4" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#ededed" text-anchor="start" textLength="33.6" lengthAdjust="spacingAndGlyphs">mypy</text>
+</svg>
