@@ -1,103 +1,252 @@
-"""Genera il banner animato del profilo nello stile "Dark Lab" di buildwithbelletz.
+"""Genera il banner animato del profilo nello stile "Cantiere" di buildwithbelletz.
+
+Stesso design system del sito: carta, inchiostro e giallo cantiere, quote e
+segni del disegno tecnico. Vengono prodotte due versioni, scelte dal README in
+base al tema di GitHub:
+
+    assets/banner-light.svg   tema "Carta"
+    assets/banner-dark.svg    tema "Inchiostro"
+
+I font del brand (Bricolage Grotesque, JetBrains Mono, licenza OFL, sorgenti in
+scripts/fonts/) vengono istanziati, ridotti ai soli glifi usati e incorporati
+nell'SVG in base64: il banner appare identico ovunque, senza richieste esterne.
+Ogni glifo è posizionato con coordinate x calcolate dalle metriche del font,
+così l'animazione macchina da scrivere avanza esattamente di un carattere.
 
 Il resto del README è markdown nativo, leggibile anche da mobile.
-Uso: python scripts/build_assets.py  (scrive assets/banner.svg)
-I testi hanno larghezza fissata con textLength, così il layout non dipende dal font installato.
+
+Requisiti: pip install fonttools brotli
+Uso:       python scripts/build_assets.py
 """
+from __future__ import annotations
+
+import base64
+import io
 from html import escape
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / "assets"
+from fontTools import subset
+from fontTools.ttLib import TTFont
+from fontTools.varLib.instancer import instantiateVariableFont
 
-BG, BORDER = "#080808", "#1f1f1f"
-TEXT, MUTED, SUBTLE, ACCENT = "#ededed", "#a3a3a3", "#777777", "#2bff9b"
-MONO = "'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
-SANS = "Inter,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
-W = 1200
-CW = 0.6  # larghezza di un carattere monospace in em
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "assets"
+FONTS = Path(__file__).resolve().parent / "fonts"
 
-GRID = f"""<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-  <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
-</pattern>"""
+W, H = 1200, 440
+PAD = 56
 
+THEMES = {
+    "light": dict(bg="#f2eee5", surface="#faf8f3", ink="#17150f", subtle="#6b655a", line="#d6cebd",
+                  grid="#17150f", grid_op=(0.05, 0.085), accent="#ffc400", accent_ink="#8a6200",
+                  word_fill="#17150f", word_band=True),
+    "dark": dict(bg="#14130f", surface="#1c1a16", ink="#f2ede3", subtle="#8f887b", line="#2f2c26",
+                 grid="#f2ede3", grid_op=(0.035, 0.065), accent="#ffc933", accent_ink="#ffd45c",
+                 word_fill="#ffc933", word_band=False),
+}
 
-def mono(x, y, text, size, fill, weight=400, spacing=0.0, anchor="start", extra=""):
-    width = len(text) * size * (CW + spacing)
-    return (f'<text x="{x}" y="{y}" font-family="{MONO}" font-size="{size}" font-weight="{weight}" '
-            f'fill="{fill}" text-anchor="{anchor}" textLength="{width:.1f}" lengthAdjust="spacingAndGlyphs"{extra}>'
-            f'{escape(text)}</text>')
-
-
-def svg(height, body, label, defs=""):
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{height}" viewBox="0 0 {W} {height}" '
-            f'role="img" aria-label="{escape(label)}">\n<title>{escape(label)}</title>\n<defs>{GRID}{defs}</defs>\n'
-            f'<rect width="{W}" height="{height}" fill="{BG}"/>\n'
-            f'<rect width="{W}" height="{height}" fill="url(#grid)"/>\n'
-            f'<rect x="0.5" y="0.5" width="{W - 1}" height="{height - 1}" fill="none" stroke="{BORDER}"/>\n'
-            f'{body}\n</svg>\n')
+PHRASES = ["Build.", "Build projects.", "Build experiments.", "Build results.", "Build with Belletz."]
+NAME = "Belletz"
+SPECS = [
+    ("ROLE", "Full Stack & AI Engineer"),
+    ("FOCUS", "AI · Full stack · B2B"),
+    ("BASE", "Italy"),
+    ("STATUS", "Open to projects"),
+]
 
 
-def banner():
-    phrases = ["Build.", "Build projects.", "Build experiments.", "Build results.", "Build with Belletz."]
-    size, x0, y0 = 88, 56, 200
-    cw = size * CW
-    type_s, hold_s, erase_s = 0.07, 1.1, 0.35
-    starts, t = [], 0.4
-    for p in phrases:
-        starts.append(t)
-        t += len(p) * type_s + hold_s + erase_s
-    total = t + 6  # la frase finale resta a schermo prima di ricominciare
+# --------------------------------------------------------------------------- fonts
+class Face:
+    """Static instance of a variable font: metrics for layout, subset for embedding."""
+
+    def __init__(self, family: str, src: str, axes: dict[str, float]):
+        self.family = family
+        self.font = instantiateVariableFont(TTFont(FONTS / src), axes)
+        self.upm = self.font["head"].unitsPerEm
+        self.cmap = self.font.getBestCmap()
+        self.hmtx = self.font["hmtx"]
+        self.used: set[str] = set()
+
+    def advance(self, ch: str, size: float) -> float:
+        self.used.add(ch)
+        glyph = self.cmap.get(ord(ch)) or self.cmap[ord("?")]
+        return self.hmtx[glyph][0] * size / self.upm
+
+    def css(self) -> str:
+        opts = subset.Options()
+        opts.flavor = "woff2"
+        opts.layout_features = []  # no kerning or ligatures: glyph positions are explicit
+        opts.name_IDs = []
+        opts.notdef_outline = True
+        font = TTFont(io.BytesIO(_dump(self.font)))
+        sub = subset.Subsetter(opts)
+        sub.populate(text="".join(sorted(self.used)) + " ")
+        sub.subset(font)
+        data = base64.b64encode(_dump(font, "woff2")).decode()
+        return f"@font-face{{font-family:'{self.family}';src:url(data:font/woff2;base64,{data}) format('woff2')}}"
+
+
+def _dump(font: TTFont, flavor: str | None = None) -> bytes:
+    buf = io.BytesIO()
+    font.flavor = flavor
+    font.save(buf)
+    return buf.getvalue()
+
+
+DISPLAY = Face("BwB Display", "BricolageGrotesque-latin-opsz-wght.woff2", {"wght": 800, "opsz": 96})
+DISPLAY_SM = Face("BwB Display Small", "BricolageGrotesque-latin-opsz-wght.woff2", {"wght": 700, "opsz": 24})
+MONO = Face("BwB Mono", "JetBrainsMono-latin-wght.woff2", {"wght": 500})
+
+
+def layout(face: Face, s: str, x: float, size: float, tracking: float) -> tuple[list[float], list[float]]:
+    """Start and end x of every glyph, with tracking in em."""
+    starts, ends, cur = [], [], x
+    for ch in s:
+        adv = face.advance(ch, size)
+        starts.append(cur)
+        ends.append(cur + adv)
+        cur += adv + tracking * size
+    return starts, ends
+
+
+def text(face: Face, x: float, y: float, s: str, size: float, fill: str, tracking=0.0) -> tuple[str, float]:
+    starts, ends = layout(face, s, x, size, tracking)
+    xattr = " ".join(f"{p:.2f}" for p in starts)
+    svg = (f'<text x="{xattr}" y="{y}" font-family="{face.family}" font-size="{size}" fill="{fill}">'
+           f"{escape(s)}</text>")
+    return svg, ends[-1] - x
+
+
+# --------------------------------------------------------------------------- banner
+def banner(theme: str) -> str:
+    t = THEMES[theme]
+    parts: list[str] = []
+    css: list[str] = []
+
+    # Brand lockup: the "Blocco" mark + "BUILD WITH / Belletz"
+    parts.append(
+        f'<g transform="translate({PAD} 50) scale({44 / 32:.4f})">'
+        f'<rect x="5" y="4" width="6" height="24" fill="{t["ink"]}"/>'
+        f'<rect x="11" y="4" width="13" height="10" fill="{t["ink"]}"/>'
+        f'<rect x="13" y="16" width="15" height="12" fill="{t["accent"]}"/></g>')
+    parts.append(text(MONO, PAD + 58, 70, "BUILD WITH", 12, t["subtle"], 0.14)[0])
+    parts.append(text(DISPLAY_SM, PAD + 58, 96, "Belletz", 26, t["ink"], -0.03)[0])
+
+    # Status chip, right aligned, with a blinking square beacon
+    label = "AVAILABLE FOR PROJECTS"
+    lw = text(MONO, 0, 0, label, 12, "", 0.14)[1]
+    cw = lw + 50
+    cx = W - PAD - cw
+    parts.append(f'<rect x="{cx:.1f}" y="58.5" width="{cw:.1f}" height="34" fill="{t["surface"]}" stroke="{t["line"]}"/>')
+    parts.append(f'<rect class="beacon" x="{cx + 16:.1f}" y="71" width="9" height="9" fill="{t["accent"]}"/>')
+    parts.append(text(MONO, cx + 34, 80, label, 12, t["ink"], 0.14)[0])
+
+    # Dimension line with end ticks and a centred label
+    dy, mid = 150, W / 2
+    dlw = text(MONO, 0, 0, "SCALE 1:1", 11, "", 0.14)[1]
+    parts.append(text(MONO, mid - dlw / 2, dy + 4, "SCALE 1:1", 11, t["subtle"], 0.14)[0])
+    for x1, x2 in ((PAD, mid - dlw / 2 - 14), (mid + dlw / 2 + 14, W - PAD)):
+        parts.append(f'<path d="M{x1:.1f} {dy}.5H{x2:.1f}" stroke="{t["subtle"]}" stroke-opacity="0.7"/>')
+    parts.append(f'<path d="M{PAD + 0.5} {dy - 5}V{dy + 6}M{W - PAD - 0.5} {dy - 5}V{dy + 6}" stroke="{t["subtle"]}"/>')
+
+    # Typewriter title: one group per phrase, revealed glyph by glyph
+    size, ty, track = 120, 270, -0.028
+    type_s, del_s, hold_s, gap_s, tail_s = 0.065, 0.032, 1.1, 0.24, 7.0
+    timeline, t0 = [], 0.5
+    for i, p in enumerate(PHRASES):
+        a = t0
+        b = a + len(p) * type_s
+        c = b + (tail_s if i == len(PHRASES) - 1 else hold_s)
+        d = c + len(p) * del_s
+        timeline.append((a, c))
+        t0 = d + gap_s
+    total = t0
     pct = lambda s: f"{100 * s / total:.3f}%"
 
-    css, groups = [], []
-    for i, p in enumerate(phrases):
-        n, final = len(p), i == len(phrases) - 1
-        a, b = starts[i], starts[i] + n * type_s
-        c = total - 0.4 if final else b + hold_s
-        d = total if final else c + erase_s
-        # Visibilità del testo: rivelato da sinistra a destra a scatti (un carattere per volta).
-        css.append(f"@keyframes p{i}{{0%,{pct(a)}{{clip-path:inset(0 100% 0 0)}}"
-                   f"{pct(a)}{{animation-timing-function:steps({n},end)}}"
-                   f"{pct(b)},{pct(c)}{{clip-path:inset(0 0 0 0)}}"
-                   f"{pct(c)}{{animation-timing-function:steps({n},end)}}"
-                   f"{pct(d)},100%{{clip-path:inset(0 100% 0 0)}}}}")
-        css.append(f".p{i}{{animation:p{i} {total:.2f}s linear infinite;clip-path:inset(0 100% 0 0)}}")
-        groups.append(f'<g class="p{i}">{mono(x0, y0, p, size, TEXT, 800)}</g>')
+    cursor: list[tuple[float, float]] = []
+    final_end = 0.0
+    for i, (p, (a, c)) in enumerate(zip(PHRASES, timeline)):
+        starts, ends = layout(DISPLAY, p, PAD, size, track)
+        edge = lambda k: ends[k - 1] if k else PAD  # right edge after k glyphs
+        steps = [(a + k * type_s, k) for k in range(len(p) + 1)]
+        steps += [(c + (len(p) - k) * del_s, k) for k in range(len(p), -1, -1)]
+        frames = "".join(f"{pct(s)}{{clip-path:inset(0 {W - edge(k):.1f}px 0 0)}}" for s, k in steps)
+        css.append(f"@keyframes p{i}{{0%{{clip-path:inset(0 {W}px 0 0)}}{frames}}}"
+                   f".p{i}{{clip-path:inset(0 {W}px 0 0);animation:p{i} {total:.2f}s step-end infinite}}")
+        cursor += [(s, edge(k) - PAD) for s, k in steps]
 
-    # Il cursore segue la fine della frase corrente.
-    frames = [f"0%{{transform:translateX(0)}}"]
-    for i, p in enumerate(phrases):
-        n, final = len(p), i == len(phrases) - 1
-        a, b = starts[i], starts[i] + n * type_s
-        c = total - 0.4 if final else b + hold_s
-        d = total if final else c + erase_s
-        end = n * cw
-        frames.append(f"{pct(a)}{{transform:translateX(0);animation-timing-function:steps({n},end)}}")
-        frames.append(f"{pct(b)},{pct(c)}{{transform:translateX({end:.1f}px);animation-timing-function:steps({n},end)}}")
-        frames.append(f"{pct(d)}{{transform:translateX(0)}}")
-    css.append("@keyframes cur{" + "".join(frames) + "}")
-    css.append(f".cur{{animation:cur {total:.2f}s linear infinite}}")
-    css.append("@keyframes blink{50%{opacity:0}} .blink{animation:blink 1s steps(1) infinite}")
-    css.append("@media (prefers-reduced-motion: reduce){[class^=p]{animation:none!important;clip-path:none!important}"
-               ".p0,.p1,.p2,.p3{display:none}.cur{animation:none;transform:translateX(" + f"{len(phrases[-1]) * cw:.1f}px" + ")}}")
+        # Full-canvas transparent rect: makes the group's box the whole banner,
+        # so the clip-path insets above are absolute pixel positions.
+        inner, word = [f'<rect width="{W}" height="{H}" fill="transparent"/>'], range(-1, -1)
+        if i == len(PHRASES) - 1:
+            final_end = ends[-1] - PAD
+            n0 = p.index(NAME)
+            word = range(n0, n0 + len(NAME))
+            if t["word_band"]:  # highlighter band behind the name, on paper only
+                bx0, bx1 = starts[n0] - 4, ends[n0 + len(NAME) - 1] + 4
+                inner.append(f'<rect x="{bx0:.1f}" y="{ty - size * 0.36:.1f}" width="{bx1 - bx0:.1f}" '
+                             f'height="{size * 0.36:.1f}" fill="{t["accent"]}"/>')
+        spans = "".join(
+            f'<tspan x="{starts[k]:.2f}"{f" fill=\"{t["word_fill"]}\"" if k in word else ""}>{escape(ch)}</tspan>'
+            for k, ch in enumerate(p))
+        inner.append(f'<text y="{ty}" font-family="{DISPLAY.family}" font-size="{size}" fill="{t["ink"]}">{spans}</text>')
+        parts.append(f'<g class="p{i}">{"".join(inner)}</g>')
 
-    body = f"""<style>{''.join(css)}</style>
-<g>
-  {mono(56, 84, "~/belletz", 30, ACCENT, 500)}
-  {mono(56 + 10 * 30 * CW, 84, "$", 30, SUBTLE)}
-  {mono(56 + 12 * 30 * CW, 84, "./run --output", 30, MUTED)}
-  {''.join(groups)}
-  <g class="cur"><rect class="blink" x="{x0 + 8}" y="{y0 - size * 0.74:.1f}" width="{size * 0.5:.1f}" height="{size * 0.8:.1f}" fill="{ACCENT}"/></g>
-  {mono(56, 296, ">", 36, ACCENT, 700)}
-  <text x="104" y="296" font-family="{SANS}" font-size="36" font-weight="500" fill="{TEXT}">Full Stack &amp; Forward Deployed AI Engineer</text>
-</g>"""
-    return svg(350, body, "Build with Belletz. Full Stack & Forward Deployed AI Engineer.")
+    cursor.sort()
+    frames = "".join(f"{pct(s)}{{transform:translateX({x:.1f}px)}}" for s, x in cursor)
+    css.append(f"@keyframes cur{{0%{{transform:translateX(0)}}{frames}}}"
+               f".cur{{animation:cur {total:.2f}s step-end infinite}}")
+    css.append("@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}.blink{animation:blink 1s steps(1) infinite}")
+    css.append("@keyframes beacon{0%,60%{opacity:1}61%,100%{opacity:.25}}.beacon{animation:beacon 1.6s steps(1) infinite}")
+    css.append("@media (prefers-reduced-motion: reduce){"
+               + "".join(f".p{i}{{display:none}}" for i in range(len(PHRASES) - 1))
+               + f".p{len(PHRASES) - 1}{{animation:none;clip-path:none}}"
+               + f".cur{{animation:none;transform:translateX({final_end:.1f}px)}}.blink,.beacon{{animation:none}}}}")
+    parts.append(f'<g class="cur"><rect class="blink" x="{PAD + 6}" y="{ty - size * 0.74:.1f}" '
+                 f'width="{size * 0.09:.1f}" height="{size * 0.78:.1f}" fill="{t["accent"]}"/></g>')
+
+    # Spec strip: the drawing's title block
+    sy, sb = 316, H - 32
+    parts.append(f'<path d="M{PAD} {sy}H{W - PAD}" stroke="{t["ink"]}" stroke-width="2"/>')
+    parts.append(f'<path d="M{PAD} {sb}.5H{W - PAD}" stroke="{t["line"]}"/>')
+    col = (W - 2 * PAD) / len(SPECS)
+    for i, (k, v) in enumerate(SPECS):
+        x = PAD + i * col + (18 if i else 0)
+        if i:
+            parts.append(f'<path d="M{PAD + i * col:.1f} {sy + 1}V{sb}" stroke="{t["line"]}"/>')
+        parts.append(text(MONO, x, sy + 34, k, 11, t["subtle"], 0.14)[0])
+        parts.append(text(DISPLAY_SM, x, sy + 70, v, 22, t["accent_ink"] if k == "STATUS" else t["ink"], -0.01)[0])
+
+    # Background: engineering paper, faded towards the edges
+    g1, g2 = t["grid_op"]
+    defs = (f'<pattern id="minor" width="16" height="16" patternUnits="userSpaceOnUse">'
+            f'<path d="M16 0H0V16" fill="none" stroke="{t["grid"]}" stroke-opacity="{g1}"/></pattern>'
+            f'<pattern id="major" width="80" height="80" patternUnits="userSpaceOnUse">'
+            f'<path d="M80 0H0V80" fill="none" stroke="{t["grid"]}" stroke-opacity="{g2}"/></pattern>'
+            f'<radialGradient id="fade" cx="0.72" cy="0.35" r="0.75">'
+            f'<stop offset="0.25" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>'
+            f'<mask id="m"><rect width="{W}" height="{H}" fill="url(#fade)"/></mask>')
+
+    fonts = DISPLAY.css() + DISPLAY_SM.css() + MONO.css()
+    label = "Build with Belletz. Full Stack & Forward Deployed AI Engineer."
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
+            f'role="img" aria-label="{escape(label)}">\n<title>{escape(label)}</title>\n'
+            f"<defs>{defs}</defs>\n<style>{fonts}text{{font-kerning:none}}{''.join(css)}</style>\n"
+            f'<rect width="{W}" height="{H}" fill="{t["bg"]}"/>\n'
+            f'<g mask="url(#m)"><rect width="{W}" height="{H}" fill="url(#minor)"/>'
+            f'<rect width="{W}" height="{H}" fill="url(#major)"/></g>\n'
+            + "\n".join(parts) + "\n</svg>\n")
 
 
-def main():
+def main() -> None:
     OUT.mkdir(exist_ok=True)
-    (OUT / "banner.svg").write_text(banner(), encoding="utf-8")
-    print(f"wrote {OUT / 'banner.svg'}")
+    # Lay out both themes once so every glyph is known before the fonts are subset.
+    for theme in THEMES:
+        banner(theme)
+    for theme in THEMES:
+        path = OUT / f"banner-{theme}.svg"
+        path.write_text(banner(theme), encoding="utf-8")
+        print(f"wrote {path.relative_to(ROOT)} ({path.stat().st_size // 1024} KB)")
 
 
 if __name__ == "__main__":
