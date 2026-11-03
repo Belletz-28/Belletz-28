@@ -41,7 +41,7 @@ Upstream supply-chain signals (FRED, SEC EDGAR, equities, tech news) turned into
 <code>[AI · RAG]</code> &nbsp;<sub>🟡 PRIVATE · IN PROGRESS</sub>
 <h3>Konny</h3>
 Multi-agent RAG assistant over WhatsApp, email and documents for the fashion-accessories supply chain: 9-stage hybrid retrieval, reranking and corrective grading.<br/><br/>
-<code>Claude</code> <code>Qdrant</code> <code>FastAPI</code> <code>SvelteKit</code>
+<code>Docker</code> <code>Qdrant</code> <code>FastAPI</code> <code>SvelteKit</code>
 </td></tr></table>
 
 <table><tr><td>
@@ -55,7 +55,7 @@ Automated trading lab: market replay, risk controls and demo execution, with app
 <code>[GROWTH]</code> &nbsp;<sub>🟡 PRIVATE · IN PROGRESS</sub>
 <h3>B2Search</h3>
 Lead generation and technical audit engine: DNS, security, SEO and AI-readiness checks turned into scored opportunities and personalised, approval-gated outreach.<br/><br/>
-<code>Python</code> <code>asyncio</code> <code>Claude</code> <code>Streamlit</code>
+<code>Python</code> <code>Security</code> <code>Js</code> <code>Networking</code>
 </td></tr></table>
 
 <table><tr><td>
