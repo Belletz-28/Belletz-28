@@ -9,9 +9,10 @@ base al tema di GitHub:
 
 Insieme al banner escono i piccoli segni del kit usati nel README:
 
-    assets/logo-light.svg     marchio "Blocco" su carta (cartiglio)
-    assets/logo-dark.svg      marchio "Blocco" su inchiostro
+    assets/logo-light.svg     marchio ufficiale V3.1 su carta (cartiglio)
+    assets/logo-dark.svg      marchio ufficiale V3.1 su inchiostro
     assets/beacon.svg         beacon quadrato giallo (stato dei progetti)
+    assets/icons/*.svg        icone duotone del kit (scripts/icons/), una per tema
 
 I font del brand (Bricolage Grotesque, JetBrains Mono, licenza OFL, sorgenti in
 scripts/fonts/) vengono istanziati, ridotti ai soli glifi usati e incorporati
@@ -53,6 +54,8 @@ THEMES = {
 
 PHRASES = ["Build.", "Build projects.", "Build experiments.", "Build results.", "Build with Belletz."]
 NAME = "Belletz"
+ICONS = Path(__file__).resolve().parent / "icons"
+MARK_W, MARK_H = 265, 246  # official mark master, Identity Kit V3.1
 SPECS = [
     ("ROLE", "Full Stack & AI Engineer"),
     ("FOCUS", "AI · Full stack · B2B"),
@@ -123,20 +126,31 @@ def text(face: Face, x: float, y: float, s: str, size: float, fill: str, trackin
     return svg, ends[-1] - x
 
 
+# --------------------------------------------------------------------------- mark
+def mark_paths(t: dict) -> str:
+    """Official Identity Kit V3.1 geometry, on its 265x246 master. Never redraw it."""
+    return (f'<path fill="{t["accent"]}" d="M110 125 H191 C225 125 250 148 250 178 C250 210 226 231 190 231 '
+            'H54 L76 199 H190 C208 199 222 190 222 177 C222 164 211 156 190 156 H89 Z"/>'
+            f'<rect x="12" y="174" width="28" height="28" fill="{t["accent"]}"/>'
+            f'<rect x="48" y="143" width="28" height="28" fill="{t["accent"]}"/>'
+            f'<path fill="{t["ink"]}" d="M18 110 L80 13 H102 L40 110 Z M62 110 L124 13 H146 L84 110 Z"/>'
+            f'<path fill="{t["ink"]}" d="M166 13 H191 C227 13 249 36 249 69 C249 99 228 120 195 120 H103 '
+            'L124 87 H192 C210 87 221 81 221 69 C221 53 211 46 192 46 H146 Z"/>')
+
+
 # --------------------------------------------------------------------------- banner
 def banner(theme: str) -> str:
     t = THEMES[theme]
     parts: list[str] = []
     css: list[str] = []
 
-    # Brand lockup: the "Blocco" mark + "BUILD WITH / Belletz"
-    parts.append(
-        f'<g transform="translate({PAD} 50) scale({44 / 32:.4f})">'
-        f'<rect x="5" y="4" width="6" height="24" fill="{t["ink"]}"/>'
-        f'<rect x="11" y="4" width="13" height="10" fill="{t["ink"]}"/>'
-        f'<rect x="13" y="16" width="15" height="12" fill="{t["accent"]}"/></g>')
-    parts.append(text(MONO, PAD + 58, 70, "BUILD WITH", 12, t["subtle"], 0.14)[0])
-    parts.append(text(DISPLAY_SM, PAD + 58, 96, "Belletz", 26, t["ink"], -0.03)[0])
+    # Brand lockup: the official mark + "BUILD WITH / Belletz"
+    # 18px between mark and name is the kit's clear space (0.25 x mark width).
+    scale = 66 / MARK_H
+    parts.append(f'<g transform="translate({PAD} 40) scale({scale:.4f})">{mark_paths(t)}</g>')
+    name_x = PAD + round(MARK_W * scale) + 18
+    parts.append(text(MONO, name_x, 70, "BUILD WITH", 12, t["subtle"], 0.14)[0])
+    parts.append(text(DISPLAY_SM, name_x, 96, "Belletz", 26, t["ink"], -0.03)[0])
 
     # Status chip, right aligned, with a blinking square beacon
     label = "AVAILABLE FOR PROJECTS"
@@ -246,13 +260,16 @@ def banner(theme: str) -> str:
 
 # --------------------------------------------------------------------------- kit marks
 def logo(theme: str) -> str:
-    """The "Blocco" mark, same geometry as the site's Logo.astro / favicon.svg."""
+    """The official mark on its own, same drawing as the kit's logos/svg/mark-*.svg."""
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{MARK_W}" height="{MARK_H}" '
+            f'viewBox="0 0 {MARK_W} {MARK_H}" role="img" aria-label="Build with Belletz">'
+            f'<title>Build with Belletz</title>{mark_paths(THEMES[theme])}</svg>\n')
+
+
+def icon(src: str, theme: str) -> str:
+    """A kit icon (drawn for paper) with the ink and yellow of the given theme."""
     t = THEMES[theme]
-    return ('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" '
-            'role="img" aria-label="Build with Belletz"><title>Build with Belletz</title>'
-            f'<rect x="5" y="4" width="6" height="24" fill="{t["ink"]}"/>'
-            f'<rect x="11" y="4" width="13" height="10" fill="{t["ink"]}"/>'
-            f'<rect x="13" y="16" width="15" height="12" fill="{t["accent"]}"/></svg>\n')
+    return src.replace("#17150F", t["ink"]).replace("#FFC400", t["accent"]).rstrip() + "\n"
 
 
 def beacon() -> str:
@@ -275,6 +292,11 @@ def main() -> None:
     for name, svg in marks.items():
         (OUT / name).write_text(svg, encoding="utf-8")
         print(f"wrote assets/{name}")
+    (OUT / "icons").mkdir(exist_ok=True)
+    for src in sorted(ICONS.glob("*.svg")):
+        for theme in THEMES:
+            (OUT / "icons" / f"{src.stem}-{theme}.svg").write_text(icon(src.read_text(encoding="utf-8"), theme), encoding="utf-8")
+    print("wrote assets/icons/")
 
 
 if __name__ == "__main__":

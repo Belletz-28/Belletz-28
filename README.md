@@ -28,6 +28,7 @@ Founder of <a href="https://github.com/CBM-Solutions">CBM-Solutions</a>. 6+ year
 <sub>Most of my work lives in private repositories: happy to walk through any of these on a call.</sub>
 
 <table><tr><td>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/systems-dark.svg"/><img src="assets/icons/systems-light.svg" width="32" height="32" alt=""/></picture><br/>
 <code>N° 01</code> &nbsp;<code>[DEV TOOLING]</code>
 <h3>belletz-skills</h3>
 Claude Code plugin marketplace for engineering-grade delivery: risk-scaled SDLC protocol, independent review, CI-parity gates, context and cost guards, benchmarks on frozen real tasks.<br/><br/>
@@ -36,6 +37,7 @@ Claude Code plugin marketplace for engineering-grade delivery: risk-scaled SDLC 
 </td></tr></table>
 
 <table><tr><td>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/analytics-dark.svg"/><img src="assets/icons/analytics-light.svg" width="32" height="32" alt=""/></picture><br/>
 <code>N° 02</code> &nbsp;<code>[MARKET INTELLIGENCE]</code>
 <h3>Semiconductor Intelligence</h3>
 Upstream supply-chain signals (FRED, SEC EDGAR, equities, tech news) turned into a 0–100 scarcity index and a TCO engine that forecast compute availability and pricing.<br/><br/>
@@ -44,6 +46,7 @@ Upstream supply-chain signals (FRED, SEC EDGAR, equities, tech news) turned into
 </td></tr></table>
 
 <table><tr><td>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/automation-dark.svg"/><img src="assets/icons/automation-light.svg" width="32" height="32" alt=""/></picture><br/>
 <code>N° 03</code> &nbsp;<code>[AI · RAG]</code>
 <h3>Konny</h3>
 Multi-agent RAG assistant over WhatsApp, email and documents for the fashion-accessories supply chain: 9-stage hybrid retrieval, reranking and corrective grading.<br/><br/>
@@ -52,6 +55,7 @@ Multi-agent RAG assistant over WhatsApp, email and documents for the fashion-acc
 </td></tr></table>
 
 <table><tr><td>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/execution-dark.svg"/><img src="assets/icons/execution-light.svg" width="32" height="32" alt=""/></picture><br/>
 <code>N° 04</code> &nbsp;<code>[TRADING LAB]</code>
 <h3>Quantum</h3>
 Automated trading lab: market replay, risk controls and demo execution, with append-only run authority and every claim backed by test evidence.<br/><br/>
@@ -60,6 +64,7 @@ Automated trading lab: market replay, risk controls and demo execution, with app
 </td></tr></table>
 
 <table><tr><td>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/strategy-dark.svg"/><img src="assets/icons/strategy-light.svg" width="32" height="32" alt=""/></picture><br/>
 <code>N° 05</code> &nbsp;<code>[GROWTH]</code>
 <h3>B2Search</h3>
 Lead generation and technical audit engine: DNS, security, SEO and AI-readiness checks turned into scored opportunities and personalised, approval-gated outreach.<br/><br/>
@@ -68,6 +73,7 @@ Lead generation and technical audit engine: DNS, security, SEO and AI-readiness 
 </td></tr></table>
 
 <table><tr><td>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/learning-dark.svg"/><img src="assets/icons/learning-light.svg" width="32" height="32" alt=""/></picture><br/>
 <code>N° 06</code> &nbsp;<code>[PLATFORM]</code>
 <h3>UniPost</h3>
 Open platform where Italian university students share questions, answers and original study material, with reputation levels and multi-stage moderation.<br/><br/>
@@ -82,11 +88,13 @@ Open platform where Italian university students share questions, answers and ori
 <table>
 <tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/automation-dark.svg"/><img src="assets/icons/automation-light.svg" width="32" height="32" alt=""/></picture><br/>
 <code>N° 01</code> &nbsp;<code>[AI]</code>
 <h3>AI engineering</h3>
 LLM-based agents, automation and document intelligence applied to real business workflows.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/modularity-dark.svg"/><img src="assets/icons/modularity-light.svg" width="32" height="32" alt=""/></picture><br/>
 <code>N° 02</code> &nbsp;<code>[FULL STACK]</code>
 <h3>Full stack</h3>
 Web platforms, internal tools and APIs, from architecture to deployment.
@@ -94,11 +102,13 @@ Web platforms, internal tools and APIs, from architecture to deployment.
 </tr>
 <tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/partnerships-dark.svg"/><img src="assets/icons/partnerships-light.svg" width="32" height="32" alt=""/></picture><br/>
 <code>N° 03</code> &nbsp;<code>[B2B]</code>
 <h3>B2B &amp; e-commerce</h3>
 Ordering, catalogues and operational back offices.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/data-dark.svg"/><img src="assets/icons/data-light.svg" width="32" height="32" alt=""/></picture><br/>
 <code>N° 04</code> &nbsp;<code>[DATA]</code>
 <h3>Data &amp; finance</h3>
 Data analysis and financial tooling, where my journey started with Python.
@@ -125,9 +135,9 @@ Data analysis and financial tooling, where my journey started with Python.
 ## How I work
 
 <table>
-<tr><td><h3><code>01</code></h3></td><td><b>Forward-deployed</b><br/>I embed with the team and the problem, then ship.</td></tr>
-<tr><td><h3><code>02</code></h3></td><td><b>Pragmatic engineering</b><br/>Small iterations, working software, measurable outcomes.</td></tr>
-<tr><td><h3><code>03</code></h3></td><td><b>Founder mindset</b><br/>Product, delivery and maintainability, not just code.</td></tr>
+<tr><td align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/deployment-dark.svg"/><img src="assets/icons/deployment-light.svg" width="32" height="32" alt=""/></picture><br/><code>01</code></td><td><b>Forward-deployed</b><br/>I embed with the team and the problem, then ship.</td></tr>
+<tr><td align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/execution-dark.svg"/><img src="assets/icons/execution-light.svg" width="32" height="32" alt=""/></picture><br/><code>02</code></td><td><b>Pragmatic engineering</b><br/>Small iterations, working software, measurable outcomes.</td></tr>
+<tr><td align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/icons/product-dark.svg"/><img src="assets/icons/product-light.svg" width="32" height="32" alt=""/></picture><br/><code>03</code></td><td><b>Founder mindset</b><br/>Product, delivery and maintainability, not just code.</td></tr>
 </table>
 
 <sub><code>TAV. 06</code> ──────────── <code>06 / 06</code></sub>
@@ -148,7 +158,7 @@ web      →  buildwithbelletz.com (coming soon)
 <td rowspan="2" valign="middle" align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg"/>
-  <img src="assets/logo-light.svg" alt="Build with Belletz logo" width="40" height="40"/>
+  <img src="assets/logo-light.svg" alt="Build with Belletz logo" width="56" height="52"/>
 </picture>
 </td>
 <td colspan="4"><sub><code>BUILD WITH</code></sub><br/><b>Belletz.</b> &nbsp;<sub>Full Stack &amp; Forward Deployed AI Engineer</sub></td>
