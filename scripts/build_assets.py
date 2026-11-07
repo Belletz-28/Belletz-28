@@ -7,6 +7,12 @@ base al tema di GitHub:
     assets/banner-light.svg   tema "Carta"
     assets/banner-dark.svg    tema "Inchiostro"
 
+Insieme al banner escono i piccoli segni del kit usati nel README:
+
+    assets/logo-light.svg     marchio "Blocco" su carta (cartiglio)
+    assets/logo-dark.svg      marchio "Blocco" su inchiostro
+    assets/beacon.svg         beacon quadrato giallo (stato dei progetti)
+
 I font del brand (Bricolage Grotesque, JetBrains Mono, licenza OFL, sorgenti in
 scripts/fonts/) vengono istanziati, ridotti ai soli glifi usati e incorporati
 nell'SVG in base64: il banner appare identico ovunque, senza richieste esterne.
@@ -238,6 +244,24 @@ def banner(theme: str) -> str:
             + "\n".join(parts) + "\n</svg>\n")
 
 
+# --------------------------------------------------------------------------- kit marks
+def logo(theme: str) -> str:
+    """The "Blocco" mark, same geometry as the site's Logo.astro / favicon.svg."""
+    t = THEMES[theme]
+    return ('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" '
+            'role="img" aria-label="Build with Belletz"><title>Build with Belletz</title>'
+            f'<rect x="5" y="4" width="6" height="24" fill="{t["ink"]}"/>'
+            f'<rect x="11" y="4" width="13" height="10" fill="{t["ink"]}"/>'
+            f'<rect x="13" y="16" width="15" height="12" fill="{t["accent"]}"/></svg>\n')
+
+
+def beacon() -> str:
+    """The square status beacon: a yellow fill, never a round dot."""
+    return ('<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" '
+            'aria-hidden="true"><rect x="1" y="1" width="8" height="8" '
+            f'fill="{THEMES["light"]["accent"]}"/></svg>\n')
+
+
 def main() -> None:
     OUT.mkdir(exist_ok=True)
     # Lay out both themes once so every glyph is known before the fonts are subset.
@@ -247,6 +271,10 @@ def main() -> None:
         path = OUT / f"banner-{theme}.svg"
         path.write_text(banner(theme), encoding="utf-8")
         print(f"wrote {path.relative_to(ROOT)} ({path.stat().st_size // 1024} KB)")
+    marks = {f"logo-{theme}.svg": logo(theme) for theme in THEMES} | {"beacon.svg": beacon()}
+    for name, svg in marks.items():
+        (OUT / name).write_text(svg, encoding="utf-8")
+        print(f"wrote assets/{name}")
 
 
 if __name__ == "__main__":
